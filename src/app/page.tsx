@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import { usePeopleApi } from '../hooks/usePeopleApi';
-import UserCard from '../components/UserCard';
+import { usePeopleApi } from './hooks/usePeopleApi';
+import UserCard from './components/UserCard';
 
 const HomePage: React.FC = () => {
     const { data, loading, error, fetchData, history } = usePeopleApi();
@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
 
             {}
             <div className="w-3/4 p-4 flex flex-col items-center">
-                <h1 className="text-2xl font-bold mb-4">Usuario Aleatorio</h1>
+                <h1 className="text-2xl font-bold mb-4">User</h1>
                 {loading && <p>Cargando...</p>}
                 {error && <p className="text-red-500">{error}</p>}
                 {data && <UserCard user={data} />}
